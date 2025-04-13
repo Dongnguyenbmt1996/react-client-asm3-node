@@ -19,7 +19,7 @@ export default function HomePage() {
   //fetch product data
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5000/products");
+      const response = await fetch("https://lab03-node.onrender.com/products");
       // "https://firebasestorage.googleapis.com/v0/b/funix-subtitle.appspot.com/o/Boutique_products.json?alt=media&token=dc67a5ea-e3e0-479e-9eaf-5e01bcd09c74"
       const data = await response.json();
       console.log(data);
