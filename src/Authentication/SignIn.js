@@ -28,7 +28,7 @@ export default function SignIn() {
     setLoginError("");
 
     try {
-      const res = await fetch("http://localhost:5000/auth/signin", {
+      const res = await fetch("https://lab03-node.onrender.com/auth/signin", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
