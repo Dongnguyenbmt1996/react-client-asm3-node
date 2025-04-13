@@ -1,0 +1,115 @@
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Nền tối */
+  display: flex;
+  justify-content: center; /* Căn giữa ngang */
+  align-items: center; /* Căn giữa dọc */
+  z-index: 9999;
+}
+
+/* Popup Container */
+.popup-container {
+  position: relative;
+  padding: 10px;
+  background: #fff;
+  width: 50%; /* 50% chiều rộng */
+  max-width: 800px; /* Giới hạn chiều rộng tối đa */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  display: flex; /* Flexbox để chia layout */
+  flex-wrap: wrap; /* Gói các phần tử nếu không đủ chỗ */
+  overflow: hidden;
+  max-height: 80%; /* Chiều cao tối đa để không vượt quá màn hình */
+  overflow-y: auto;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 10px; /* Khoảng cách từ đỉnh */
+  right: 10px; /* Khoảng cách từ phải */
+  background: transparent;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Image Section */
+.popup-image {
+  flex: 1;
+  min-width: 40%; /* Đảm bảo kích thước tối thiểu */
+  background-color: #f9f9f9; /* Màu nền nhạt nếu ảnh không tải */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.popup-image img {
+  max-width: 100%; /* Không vượt quá kích thước container */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Details Section */
+.popup-details {
+  flex: 1;
+  min-width: 60%; /* Đảm bảo kích thước tối thiểu */
+  padding: 40px 18px;
+}
+
+.popup-details h2 {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+.popup-details p {
+  font-size: 16px;
+  color: #424242;
+  margin-bottom: 20px;
+}
+.text-price {
+  color: black;
+}
+.popup-details button {
+  background-color: rgb(86, 86, 86);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  max-width: fit-content;
+}
+
+.popup-details button:hover {
+  background-color: #000000;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .popup-container {
+    width: 80%;
+    flex-direction: column;
+  }
+
+  .popup-image {
+    min-width: 80%;
+    height: 200px;
+  }
+
+  .popup-details {
+    min-width: 100%;
+    padding-top: 80px;
+  }
+  .popup-image img {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    max-width: 50%; /* Không vượt quá kích thước container */
+    height: auto;
+    object-fit: contain;
+  }
+}
