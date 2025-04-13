@@ -16,8 +16,8 @@ export default function CartPage() {
 
   // Fetch cart từ backend
   useEffect(() => {
-    fetch("http://localhost:5000/cart", {
-      credentials: "include",
+    fetch("https://lab03-node.onrender.com/cart", {
+      // credentials: "include",
     })
       .then((res) => {
         if (res.status === 401) {
@@ -48,12 +48,12 @@ export default function CartPage() {
   const handleUpdateQuantity = async (productId, quantity) => {
     if (quantity < 1) return;
     try {
-      const res = await fetch("http://localhost:5000/cart/update", {
+      const res = await fetch("https://lab03-node.onrender.com/cart/update", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
         },
-        credentials: "include",
+        // credentials: "include",
         body: JSON.stringify({ productId, quantity }),
       });
       const data = await res.json();
@@ -67,9 +67,9 @@ export default function CartPage() {
   const handleDelete = async (productId) => {
     if (!window.confirm("Bạn muốn xoá sản phẩm này?")) return;
     try {
-      const res = await fetch(`http://localhost:5000/remove/${productId}`, {
+      const res = await fetch(`https://lab03-node.onrender.com/remove/${productId}`, {
         method: "DELETE",
-        credentials: "include",
+        // credentials: "include",
         headers: { "Content-Type": "application/json" },
       });
       const data = await res.json();
